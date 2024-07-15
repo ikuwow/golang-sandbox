@@ -8,3 +8,11 @@ Not in chronological order.
 * `go mod init github.com/ikuwow/golang-sandbox`
   * go.mod is created
 * Add main.go
+
+
+
+## Run
+
+```sh
+go run main.go memo.go
+```
