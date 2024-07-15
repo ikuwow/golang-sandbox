@@ -1,2 +1,9 @@
 # golang-sandbox
-My sandbox for Golang
+
+This is my personal sandbox for [Golang](ihttps://go.dev).
+
+## Commands
+
+```
+go run main.go
+```
