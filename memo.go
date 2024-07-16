@@ -12,6 +12,12 @@ func Memo() {
 	shortIf()
 
 	fmt.Printf("OS name: %s\n", getOSName())
+
+	useStruct()
+
+	arrayAndSlice()
+
+	runFibonacci()
 }
 
 func forLoop() {
@@ -71,4 +77,57 @@ func getOSName() (os_name string) {
 	}
 
 	return
+}
+
+func useStruct() {
+	type Vertex struct {
+		X int
+		Y int
+	}
+
+	v1 := Vertex{1, 2}
+	v2 := Vertex{X: 3, Y: 4}
+
+	p1 := &v1
+
+	p1.X = 333
+
+	fmt.Println(v1.X, v2.X)
+}
+
+func arrayAndSlice() {
+	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+
+	for i, v := range pow {
+		fmt.Printf("2**%d = %d\n", i, v)
+	}
+}
+
+// fibonacci is a function that returns
+// a function that returns an int.
+func fibonacci() func() int {
+	var previous int
+	var current int
+	return func() int {
+
+		if current == 0 {
+			previous = 0
+			current = 1
+			return 0
+		}
+
+		next := previous + current
+
+		previous = current
+		current = next
+
+		return next
+	}
+}
+
+func runFibonacci() {
+	f := fibonacci()
+	for i := 0; i < 20; i++ {
+		fmt.Println(f())
+	}
 }
