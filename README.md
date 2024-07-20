@@ -17,5 +17,5 @@ tour
 ## Commands
 
 ```
-go run main.go
+make
 ```
